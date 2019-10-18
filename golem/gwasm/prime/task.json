@@ -1,0 +1,23 @@
+{
+  type: "wasm",
+  name: "primefind",
+  bid: 1,
+  subtask_timeout: "00:10:00",
+  timeout: "00:30:00",
+  "options": {
+    js_name: "program.js",
+    wasm_name: "program.wasm",
+    input_dir: "/home/user/input",
+    output_dir: "/home/user/output",
+    "subtasks": {
+      "subtask1": {
+          "exec_args": ["arg1", "arg2"],
+          "output_file_paths": ["out.txt"]
+      },
+      "subtask2": {
+          "exec_args": ["arg3", "arg4"],
+          "output_file_paths": ["out.txt"]
+      }
+    }
+  }
+}
