@@ -4,6 +4,16 @@ Current nodes on mainnet: https://stats.golem.network/ui/
 
 Ports to forward: 3282, 40102, 40103
 
+## emsdk
+
+```bash
+git clone https://github.com/emscripten-core/emsdk.git
+cd emsdk
+./emsdk install latest
+./emsdk activate latest
+source ./emsdk_env.sh
+```
+
 ### Rust
 
 ```bash
