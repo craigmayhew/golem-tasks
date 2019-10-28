@@ -10,6 +10,8 @@ There's a number of other things to install if we want to compile a rust program
 2. emsdk (see below for specific instructions)
 3. rust (rustup, and then a wasm target)
 
+Be aware if you transfer youself some glm, you also need a small quantity of eth!
+
 ## emsdk
 
 ```bash
