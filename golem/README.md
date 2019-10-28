@@ -10,8 +10,6 @@ There's a number of other things to install if we want to compile a rust program
 2. emsdk (see below for specific instructions)
 3. rust (rustup, and then a wasm target)
 
-Be aware if you transfer youself some glm, you also need a small quantity of eth!
-
 ## emsdk
 
 ```bash
@@ -24,6 +22,8 @@ source ./emsdk_env.sh
 
 ### Rust
 
+https://docs.golem.network/#/Products/Brass-Beta/gWASM?id=creating-gwasm-tasks-in-golem
+
 ```bash
 # one time install
 rustup target add wasm32-unknown-emscripten
@@ -32,3 +32,9 @@ rustup target add wasm32-unknown-emscripten
 cargo rustc --target=wasm32-unknown-emscripten --release -- \
   -C link-args="-s BINARYEN_ASYNC_COMPILATION=0"
 ```
+
+### Deploy gwasm to main net
+
+1. Send yourself a little glm and a little eth.
+2. `golemcli tasks create task.json`
+3. `golemcli tasks show`
