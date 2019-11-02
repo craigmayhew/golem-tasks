@@ -44,3 +44,8 @@ cargo rustc --target=wasm32-unknown-emscripten --release -- \
 1. Send yourself a little glm and a little eth.
 2. `golemcli tasks create task.json`
 3. `golemcli tasks show`
+
+## Gotchas
+
+1. Every subtask needs a directory within the "in" directory or they timeout.
+2. 
