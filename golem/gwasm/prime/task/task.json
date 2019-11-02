@@ -1,14 +1,17 @@
 {
-  "type": "wasm",
+  "compute_on": "cpu",
+  "type": "WASM",
   "name": "primefind",
-  "bid": 2,
-  "subtask_timeout": "00:10:00",
-  "timeout": "00:30:00",
+  "bid": 1,
+  "subtask_timeout": "00:05:00",
+  "timeout": "00:06:00",
+  "resources": [],
+  "subtasks_count": 2,
   "options": {
     "js_name": "prime.js",
     "wasm_name": "prime.wasm",
-    "input_dir": "/home/user/in",
-    "output_dir": "/home/user/out",
+    "input_dir": "C:\\Users\\user\\Documents\\GitHub\\scratchpad\\golem\\gwasm\\prime\\in",
+    "output_dir": "C:\\Users\\user\\Documents\\GitHub\\scratchpad\\golem\\gwasm\\prime\\out",
     "subtasks": {
       "subtask1": {
           "exec_args": ["arg1", "arg2"],
