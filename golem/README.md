@@ -2,7 +2,11 @@
 
 Current nodes on mainnet: https://stats.golem.network/ui/
 
+On windows you may need to enable hyper-v: `hyper-v Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All`
+
 Ports to forward: 3282, 40102, 40103
+
+I also ran into some issues where the golem VM failed, and had to run this `docker-machine rm -f golem` so that Golem pulls a fresh copy and is able to start.
 
 There's a number of other things to install if we want to compile a rust program to wasm.
 
@@ -11,13 +15,15 @@ There's a number of other things to install if we want to compile a rust program
 3. rust (rustup, and then a wasm target)
 
 ## emsdk
+It may be enough to just install the apt packagage and no the custom github build below! I found on 2nd November that the github build of emscripten was erroring with "ERROR: BINARYEN_TRAP_MODE is not supported by the LLVM wasm backend"
+```sudo apt install emscripten```
 
 ```bash
-git clone https://github.com/emscripten-core/emsdk.git
-cd emsdk
-./emsdk install latest
-./emsdk activate latest
-source ./emsdk_env.sh
+#git clone https://github.com/emscripten-core/emsdk.git
+#cd emsdk
+#./emsdk install latest
+#./emsdk activate latest
+#source ./emsdk_env.sh
 ```
 
 ### Rust
