@@ -14,7 +14,7 @@
     "output_dir": "C:\\Users\\user\\Documents\\GitHub\\scratchpad\\golem\\gwasm\\prime\\out",
     "subtasks": {
       "subtask1": {
-          "exec_args": ["arg1", "arg2"],
+          "exec_args": ["1"],
           "output_file_paths": ["out.txt"]
       }
     }
