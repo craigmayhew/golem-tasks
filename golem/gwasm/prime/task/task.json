@@ -2,7 +2,7 @@
   "compute_on": "cpu",
   "type": "WASM",
   "name": "primefind",
-  "bid": 1,
+  "bid": 0.3,
   "subtask_timeout": "00:05:00",
   "timeout": "00:06:00",
   "resources": [],
