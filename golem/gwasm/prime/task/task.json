@@ -3,8 +3,8 @@
   "type": "WASM",
   "name": "hash digits",
   "bid": 0.3,
-  "subtask_timeout": "00:05:00",
-  "timeout": "00:06:00",
+  "subtask_timeout": "00:02:00",
+  "timeout": "00:10:00",
   "resources": [],
   "subtasks_count": 1,
   "options": {
