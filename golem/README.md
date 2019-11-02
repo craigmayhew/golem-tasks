@@ -48,4 +48,4 @@ cargo rustc --target=wasm32-unknown-emscripten --release -- \
 ## Gotchas
 
 1. Every subtask needs a directory within the "in" directory or they timeout.
-2. 
+2. The total timeout needs to be atleast twice the timeout of a single subtask or Golem can't retry them.
