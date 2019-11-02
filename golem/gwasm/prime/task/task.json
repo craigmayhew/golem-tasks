@@ -15,6 +15,22 @@
       "subtask1": {
           "exec_args": ["1"],
           "output_file_paths": ["out.txt"]
+      },
+      "subtask2": {
+        "exec_args": ["2"],
+        "output_file_paths": ["out.txt"]
+      },
+      "subtask3": {
+        "exec_args": ["3"],
+        "output_file_paths": ["out.txt"]
+      },
+      "subtask4": {
+        "exec_args": ["4"],
+        "output_file_paths": ["out.txt"]
+      },
+      "subtask5": {
+        "exec_args": ["5"],
+        "output_file_paths": ["out.txt"]
       }
     }
   }
