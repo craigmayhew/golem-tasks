@@ -6,7 +6,7 @@
   "subtask_timeout": "00:05:00",
   "timeout": "00:06:00",
   "resources": [],
-  "subtasks_count": 2,
+  "subtasks_count": 1,
   "options": {
     "js_name": "prime.js",
     "wasm_name": "prime.wasm",
@@ -15,10 +15,6 @@
     "subtasks": {
       "subtask1": {
           "exec_args": ["arg1", "arg2"],
-          "output_file_paths": ["out.txt"]
-      },
-      "subtask2": {
-          "exec_args": ["arg3", "arg4"],
           "output_file_paths": ["out.txt"]
       }
     }
