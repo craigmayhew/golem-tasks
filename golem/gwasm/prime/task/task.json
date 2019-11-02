@@ -6,7 +6,6 @@
   "subtask_timeout": "00:02:00",
   "timeout": "00:10:00",
   "resources": [],
-  "subtasks_count": 1,
   "options": {
     "js_name": "prime.js",
     "wasm_name": "prime.wasm",
