@@ -15,15 +15,8 @@ There's a number of other things to install if we want to compile a rust program
 3. rust (rustup, and then a wasm target)
 
 ## emsdk
-It may be enough to just install the apt packagage and no the custom github build below! I found on 2nd November that the github build of emscripten was erroring with "ERROR: BINARYEN_TRAP_MODE is not supported by the LLVM wasm backend"
-```sudo apt install emscripten```
-
 ```bash
-#git clone https://github.com/emscripten-core/emsdk.git
-#cd emsdk
-#./emsdk install latest
-#./emsdk activate latest
-#source ./emsdk_env.sh
+sudo apt install emscripten
 ```
 
 ### Rust
