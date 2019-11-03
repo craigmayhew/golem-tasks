@@ -36,6 +36,9 @@ fn main() -> io::Result<()> {
             out_file.write_all(&attempt.as_bytes())?;
         }
     }
+
+    let mut out_file = fs::File::create("out.txt")?;
+    out_file.write_all("".as_bytes())?;
     
     Ok(())
 }
