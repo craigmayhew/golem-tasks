@@ -2,7 +2,7 @@
   "compute_on": "cpu",
   "type": "WASM",
   "name": "hash digits",
-  "bid": 0.3,
+  "bid": 0.55,
   "subtask_timeout": "00:02:00",
   "timeout": "00:10:00",
   "resources": [],
