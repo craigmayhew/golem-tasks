@@ -1,3 +1,4 @@
+use std::env;
 use std::fs;
 use std::io::{self, Write};
 
@@ -20,7 +21,11 @@ fn main() -> io::Result<()> {
         .take(10)
         .collect::<String>();
 
-    for _n in 0..1048576 {
+    let args = env::args().collect::<Vec<String>>();
+    let arg1 = args.get(1).map_or("anonymous".to_owned(), |x| x.clone());
+    hash.push_str(&arg1);
+
+    for _n in 0..50_000_000 {
         let input_hash:String = hash;
         let mut attempt = String::from("My name is ZeroPointCraig and this file has a hash of ");
         attempt.push_str(&input_hash);
