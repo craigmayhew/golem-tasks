@@ -14,7 +14,7 @@ fn main() -> io::Result<()> {
     let mut input = String::new();
     in_file.read_to_string(&mut input)?;*/
 
-    let difficulty:usize = 5;
+    let difficulty:usize = 10;
 
     let mut hash = rand::thread_rng()
         .sample_iter(&Alphanumeric)
