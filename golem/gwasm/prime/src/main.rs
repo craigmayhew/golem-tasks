@@ -16,6 +16,7 @@ fn main() -> io::Result<()> {
 
     let difficulty:usize = 10;
 
+    //generate randomness so we arent always starting on the same hashes
     let mut hash = rand::thread_rng()
         .sample_iter(&Alphanumeric)
         .take(10)
