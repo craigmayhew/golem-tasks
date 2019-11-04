@@ -22,7 +22,7 @@ fn main() -> io::Result<()> {
         .collect::<String>();
 
     let args = env::args().collect::<Vec<String>>();
-    let arg1 = args.get(1).map_or("anonymous".to_owned(), |x| x.clone());
+    let arg1 = args.get(1).map_or("no value found".to_owned(), |x| x.clone());
     hash.push_str(&arg1);
 
     for _n in 0..50_000_000 {
