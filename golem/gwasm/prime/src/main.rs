@@ -25,20 +25,21 @@ fn main() -> io::Result<()> {
     let arg1 = args.get(1).map_or("no value found".to_owned(), |x| x.clone());
     hash.push_str(&arg1);
 
+    let mut out_file = fs::File::create("out.txt")?;
+    let mut output:String = String::from(" ");
+
     for _n in 0..50_000_000 {
         let input_hash:String = hash;
         let mut attempt = String::from("My name is ZeroPointCraig and this file has a hash of ");
         attempt.push_str(&input_hash);
         hash = format!("{:x}", md5::compute(&attempt));
         if hash[0..difficulty] == input_hash[0..difficulty] {
-            //only write out.txt if we find an answer!
-            let mut out_file = fs::File::create("out.txt")?;
-            out_file.write_all(&attempt.as_bytes())?;
+            //write answer to out.txt
+            output = attempt.clone();
         }
     }
 
-    let mut out_file = fs::File::create("out.txt")?;
-    out_file.write_all("".as_bytes())?;
-    
+    out_file.write_all(output.as_bytes())?;
+
     Ok(())
 }
