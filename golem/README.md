@@ -3,7 +3,7 @@
 This briefly shows you how to install golem, rust, compile golem tasks and deploy to mainnet.
 
 Tasks:
- - [md5 recursion](md5-recursion/README.md)
+ - [md5 recursion](gwasm/md5-recursion/README.md)
 
 ## Setup / install
 
