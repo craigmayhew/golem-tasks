@@ -2,6 +2,9 @@
 
 This briefly shows you how to install golem, rust, compile golem tasks and deploy to mainnet.
 
+Tasks:
+ - [md5 recursion](md5-recursion/README.md)
+
 ## Setup / install
 
 On windows you may need to enable hyper-v: `hyper-v Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All`

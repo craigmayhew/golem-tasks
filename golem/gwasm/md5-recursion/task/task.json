@@ -1,10 +1,10 @@
 {
   "compute_on": "cpu",
   "type": "WASM",
-  "name": "hash digits",
-  "bid": 0.55,
-  "subtask_timeout": "00:02:00",
-  "timeout": "00:10:00",
+  "name": "md5 recursion",
+  "bid": 1.0,
+  "subtask_timeout": "00:05:00",
+  "timeout": "00:60:00",
   "resources": [],
   "options": {
     "js_name": "prime.js",
