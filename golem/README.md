@@ -34,5 +34,28 @@ cargo rustc --target=wasm32-unknown-emscripten --release -- \
 
 ## Gotchas
 
-1. Every subtask needs a directory within the "in" directory or they timeout.
+1. Every subtask needs a directory within the "in" directory or they timeout. A useful command to do this: `mkdir subtask{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}`
 2. The total timeout needs to be atleast twice the timeout of a single subtask or Golem can't retry them.
+
+## ToDo
+
+1. It would be nice to have a simple script that generates the task.json file, especially the subtasks.
+2. Get Golem going on a meaningful problem such as 33.
+3. Is there an upper limit to the number of subtasks we can place on the network? i.e. what if it's a billion, and then what happens?
+
+## Hacks
+
+Generate json for subtasks using javascript
+```js
+var subtasks = "";
+var numbers = '';
+
+for (var i=0; i<100; i++) {
+   numbers += i + ',';
+   subtasks += 
+   '"subtask' + i + '": {' +  '"exec_args": ["seed' + i + '"],"output_file_paths":["out.txt"]},';
+}
+
+console.log(subtasks);
+console.log(numbers);
+```
