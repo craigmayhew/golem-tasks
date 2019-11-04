@@ -26,7 +26,7 @@ cargo rustc --target=wasm32-unknown-emscripten --release -- \
   -C link-args="-s BINARYEN_ASYNC_COMPILATION=0"
 ```
 
-### Deploy gwasm to main net
+## Deploy gwasm to main net
 
 1. Send yourself a little glm and a little eth.
 2. `golemcli tasks create task.json`
