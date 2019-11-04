@@ -1,6 +1,8 @@
-## Golem
+# Golem
 
-Current nodes on mainnet: https://stats.golem.network/ui/
+This briefly shows you how to install golem, rust, compile golem tasks and deploy to mainnet.
+
+## Setup / install
 
 On windows you may need to enable hyper-v: `hyper-v Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All`
 
