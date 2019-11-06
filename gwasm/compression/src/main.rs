@@ -1,3 +1,7 @@
-fn main() {
-    println!("Hello, world!");
+use std::io::{self, Write};
+
+fn main() -> io::Result<()> {
+    
+
+    Ok(())
 }
