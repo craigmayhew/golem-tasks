@@ -1,0 +1,7 @@
+[package]
+name = "compression"
+version = "0.1.0"
+authors = ["Craig Mayhew"]
+edition = "2018"
+
+[dependencies]
