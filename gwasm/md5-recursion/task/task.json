@@ -13,23 +13,23 @@
     "output_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\prime\\out",
     "subtasks": {
       "subtask1": {
-        "exec_args": ["1"],
+        "exec_args": ["seed1"],
         "output_file_paths": ["out.txt"]
       },
       "subtask2": {
-        "exec_args": ["2"],
+        "exec_args": ["seed2"],
         "output_file_paths": ["out.txt"]
       },
       "subtask3": {
-        "exec_args": ["3"],
+        "exec_args": ["seed3"],
         "output_file_paths": ["out.txt"]
       },
       "subtask4": {
-        "exec_args": ["4"],
+        "exec_args": ["seed4"],
         "output_file_paths": ["out.txt"]
       },
       "subtask5": {
-        "exec_args": ["5"],
+        "exec_args": ["seed5"],
         "output_file_paths": ["out.txt"]
       }
     }
