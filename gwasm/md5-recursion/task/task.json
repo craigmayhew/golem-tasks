@@ -9,8 +9,8 @@
   "options": {
     "js_name": "prime.js",
     "wasm_name": "prime.wasm",
-    "input_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\prime\\in",
-    "output_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\prime\\out",
+    "input_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\md5recursion\\in",
+    "output_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\md5recursion\\out",
     "subtasks": {
       "subtask1": {
         "exec_args": ["seed1"],
