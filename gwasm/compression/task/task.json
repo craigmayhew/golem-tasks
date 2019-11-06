@@ -1,0 +1,21 @@
+{
+  "compute_on": "cpu",
+  "type": "WASM",
+  "name": "compression",
+  "bid": 1.0,
+  "subtask_timeout": "00:03:00",
+  "timeout": "00:10:00",
+  "resources": [],
+  "options": {
+    "js_name": "compression.js",
+    "wasm_name": "compression.wasm",
+    "input_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\compression\\in",
+    "output_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\compression\\out",
+    "subtasks": {
+      "subtask1": {
+        "exec_args": ["seed1"],
+        "output_file_paths": ["out.xz"]
+      }
+    }
+  }
+}
