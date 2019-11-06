@@ -5,3 +5,4 @@ authors = ["Craig Mayhew"]
 edition = "2018"
 
 [dependencies]
+rust-lzma = "0.4"
