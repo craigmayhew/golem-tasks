@@ -40,6 +40,10 @@ cargo rustc --target=wasm32-unknown-emscripten --release -- \
 1. Every subtask needs a directory within the "in" directory or they timeout. A useful command to do this: `mkdir subtask{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}`
 2. The total timeout needs to be atleast twice the timeout of a single subtask or Golem can't retry them.
 
+### Emscripten
+
+1. Error "Target feature 'atomics' used in" some_file.o is disallowed" means you need to add the flag "-s USE_PTHREADS=1"
+
 ## ToDo
 
 1. It would be nice to have a simple script that generates the task.json file, especially the subtasks.
