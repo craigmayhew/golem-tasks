@@ -44,7 +44,7 @@ script:
     then
       cd $TRAVIS_HOME
       git clone https://github.com/emscripten-core/emsdk.git
-      cd /emsdk
+      cd emsdk
       ./emsdk install latest
       ./emsdk activate latest
       source ./emsdk_env.sh
