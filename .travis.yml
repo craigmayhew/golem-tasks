@@ -15,10 +15,9 @@ env:
  - TASK=prime-check COMPILER=wasm32-wasi RUST_BACKTRACE=1
 
 allow_failures:
-  - env:
-     - TASK=compression COMPILER=cargo-wasi RUST_BACKTRACE=1
-     - TASK=compression COMPILER=wasm32-unknown-emscripten RUST_BACKTRACE=1
-     - TASK=compression COMPILER=wasm32-wasi RUST_BACKTRACE=1
+  - env: TASK=compression COMPILER=cargo-wasi RUST_BACKTRACE=1
+  - env: TASK=compression COMPILER=wasm32-unknown-emscripten RUST_BACKTRACE=1
+  - env: TASK=compression COMPILER=wasm32-wasi RUST_BACKTRACE=1
 
 os: linux
 dist: bionic
