@@ -4,8 +4,8 @@ cache:
   cargo: true
 
 env:
- - RUST_BACKTRACE=1 TASK=compression
- - RUST_BACKTRACE=1 TASK=md5-recursion
+ - TASK=compression RUST_BACKTRACE=1
+ - TASK=md5-recursion RUST_BACKTRACE=1
 
 os: linux
 dist: bionic
