@@ -17,7 +17,7 @@ rust:
 
 jobs:
   include:
-    - stage: Test
+    - 
       install:
         
       before_script:
