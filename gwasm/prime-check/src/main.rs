@@ -5,12 +5,15 @@ use std::io::{self, Write};
 extern crate prime_tools;
 
 fn main() -> io::Result<()> {
+    //setup out.txt file
     let mut out_file = fs::File::create("out.txt")?;
     let mut output:String = String::from(" ");
 
+    //get first argument
     let args = env::args().collect::<Vec<String>>();
     let possible_prime = args.get(1).map_or("no value found".to_owned(), |x| x.clone());
     
+    //prime check
     output.push_str(&possible_prime);
     if prime_tools::is_u64_prime(possible_prime.parse::<u64>().unwrap()) {
         output.push_str(" is prime!");
