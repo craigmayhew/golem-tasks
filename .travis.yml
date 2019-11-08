@@ -10,6 +10,9 @@ env:
  - TASK=md5-recursion COMPILER=cargo-wasi RUST_BACKTRACE=1
  - TASK=md5-recursion COMPILER=wasm32-unknown-emscripten RUST_BACKTRACE=1
  - TASK=md5-recursion COMPILER=wasm32-wasi RUST_BACKTRACE=1
+ - TASK=prime-check COMPILER=cargo-wasi RUST_BACKTRACE=1
+ - TASK=prime-check COMPILER=wasm32-unknown-emscripten RUST_BACKTRACE=1
+ - TASK=prime-check COMPILER=wasm32-wasi RUST_BACKTRACE=1
 
 os: linux
 dist: bionic
