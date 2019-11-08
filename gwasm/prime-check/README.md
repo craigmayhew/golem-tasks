@@ -1,4 +1,4 @@
-# MD5 Recursion Task
+# MD5 Prime Check
 
 cd to "in" directory and compile:
 ```bash
