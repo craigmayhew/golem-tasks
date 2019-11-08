@@ -14,6 +14,8 @@ stages:
 jobs:
   include:
     - stage: Build
+      env:
+        - TASK=md5-recursion
     # Builds on nightly.
       rust: nightly
       install:
@@ -39,6 +41,8 @@ jobs:
     # Builds on beta.
     - 
       rust: beta
+      env:
+        - TASK=md5-recursion
       install:
         
       before_script:
@@ -62,6 +66,8 @@ jobs:
     # Builds on stable.
     -
       rust: stable
+      env:
+        - TASK=md5-recursion
       install:
         
       before_script:
