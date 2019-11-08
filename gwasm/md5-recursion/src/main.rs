@@ -29,7 +29,7 @@ fn main() -> io::Result<()> {
     let mut out_file = fs::File::create("out.txt")?;
     let mut output:String = String::from(" ");
 
-    for _n in 0..50_000_000 {
+    for _n in 0..500_000_000 {
         let input_hash:String = hash;
         let mut attempt = String::from("My name is ZeroPointCraig and this file has a hash of ");
         attempt.push_str(&input_hash);
