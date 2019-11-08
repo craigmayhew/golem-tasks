@@ -4,9 +4,12 @@ cache:
   cargo: true
 
 env:
+ - TASK=compression COMPILER=cargo-wasi RUST_BACKTRACE=1
+ - TASK=compression COMPILER=wasm32-unknown-emscripten RUST_BACKTRACE=1
  - TASK=compression COMPILER=wasm32-wasi RUST_BACKTRACE=1
- - TASK=md5-recursion COMPILER=wasm32-wasi RUST_BACKTRACE=1
+ - TASK=md5-recursion COMPILER=cargo-wasi RUST_BACKTRACE=1
  - TASK=md5-recursion COMPILER=wasm32-unknown-emscripten RUST_BACKTRACE=1
+ - TASK=md5-recursion COMPILER=wasm32-wasi RUST_BACKTRACE=1
 
 os: linux
 dist: bionic
@@ -40,6 +43,11 @@ script:
       cargo check --target wasm32-wasi
       cargo check --target wasm32-wasi --no-default-features
       cargo rustc --target=wasm32-wasi --release --verbose
+    elif [ $COMPILER == "cargo-wasi" ]
+    then
+      cargo install cargo-wasi
+      cargo wasi --version
+      cargo wasi build
     elif [ $COMPILER == "wasm32-unknown-emscripten" ]
     then
       cd $TRAVIS_HOME
