@@ -34,10 +34,6 @@ jobs:
         - cargo check --target wasm32-wasi
         - cargo check                      --no-default-features
         - cargo check --target wasm32-wasi --no-default-features
-        - cargo check                      --no-default-features --features console_error_panic_hook
-        - cargo check --target wasm32-wasi --no-default-features --features console_error_panic_hook
-        - cargo check                      --no-default-features --features "console_error_panic_hook wee_alloc"
-        - cargo check --target wasm32-wasi --no-default-features --features "console_error_panic_hook wee_alloc"
         - cargo build
         - cargo test
     # Builds on beta.
@@ -61,10 +57,6 @@ jobs:
         - cargo check --target wasm32-wasi
         - cargo check                      --no-default-features
         - cargo check --target wasm32-wasi --no-default-features
-        - cargo check                      --no-default-features --features console_error_panic_hook
-        - cargo check --target wasm32-wasi --no-default-features --features console_error_panic_hook
-        - cargo check                      --no-default-features --features "console_error_panic_hook wee_alloc"
-        - cargo check --target wasm32-wasi --no-default-features --features "console_error_panic_hook wee_alloc"
         - cargo build
         - cargo test
     # Builds on stable.
@@ -88,10 +80,6 @@ jobs:
         - cargo check --target wasm32-wasi
         - cargo check                      --no-default-features
         - cargo check --target wasm32-wasi --no-default-features
-        - cargo check                      --no-default-features --features console_error_panic_hook
-        - cargo check --target wasm32-wasi --no-default-features --features console_error_panic_hook
-        - cargo check                      --no-default-features --features "console_error_panic_hook wee_alloc"
-        - cargo check --target wasm32-wasi --no-default-features --features "console_error_panic_hook wee_alloc"
         - cargo build
         - cargo test
 
