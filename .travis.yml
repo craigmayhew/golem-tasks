@@ -8,9 +8,6 @@ env: RUST_BACKTRACE=1
 os: linux
 dist: bionic
 
-stages:
-  - name: Build
-
 rust:
  - nightly
  - beta
