@@ -22,12 +22,13 @@ jobs:
         
       before_cache:
         # this following line is recommended by travis docs if one overrides before_cache
-        - rm -rf "$TRAVIS_HOME/.cargo/registry/src"
+        - rm -rf "$TRAVIS_HOME/gwasm/md5-recursion/.cargo/registry/src"
         # for builds using rust nightly, we may aswell not attempt to cache target directory
         # as every night, this cache is no longer useful
-        - rm -rfv $TRAVIS_BUILD_DIR/target/
-        - cargo clean -p md5-recursion
+        - rm -rfv $TRAVIS_BUILD_DIR/gwasm/md5-recursion/target/
+        - cd $TRAVIS_HOME/gwasm/md5-recursion/ && cargo clean -p md5-recursion
       script:
+        - cd $TRAVIS_HOME/gwasm/md5-recursion/
         - cargo check
         - cargo check --target wasm32-wasi
         - cargo check                      --no-default-features
@@ -47,12 +48,13 @@ jobs:
         
       before_cache:
         # this following line is recommended by travis docs if one overrides before_cache
-        - rm -rf "$TRAVIS_HOME/.cargo/registry/src"
+        - rm -rf "$TRAVIS_HOME/gwasm/md5-recursion/.cargo/registry/src"
         # for builds using rust nightly, we may aswell not attempt to cache target directory
         # as every night, this cache is no longer useful
-        - rm -rfv $TRAVIS_BUILD_DIR/target/
-        - cargo clean -p md5-recursion
+        - rm -rfv $TRAVIS_BUILD_DIR/gwasm/md5-recursion/target/
+        - cd $TRAVIS_HOME/gwasm/md5-recursion/ && cargo clean -p md5-recursion
       script:
+        - cd $TRAVIS_HOME/gwasm/md5-recursion/
         - cargo check
         - cargo check --target wasm32-wasi
         - cargo check                      --no-default-features
@@ -72,12 +74,13 @@ jobs:
         
       before_cache:
         # this following line is recommended by travis docs if one overrides before_cache
-        - rm -rf "$TRAVIS_HOME/.cargo/registry/src"
+        - rm -rf "$TRAVIS_HOME/gwasm/md5-recursion/.cargo/registry/src"
         # for builds using rust nightly, we may aswell not attempt to cache target directory
         # as every night, this cache is no longer useful
-        - rm -rfv $TRAVIS_BUILD_DIR/target/
-        - cargo clean -p md5-recursion
+        - rm -rfv $TRAVIS_BUILD_DIR/gwasm/md5-recursion/target/
+        - cd $TRAVIS_HOME/gwasm/md5-recursion/ && cargo clean -p md5-recursion
       script:
+        - cd $TRAVIS_HOME/gwasm/md5-recursion/
         - cargo check
         - cargo check --target wasm32-wasi
         - cargo check                      --no-default-features
