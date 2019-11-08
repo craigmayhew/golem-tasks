@@ -33,7 +33,7 @@ script:
   - cargo check --target wasm32-wasi
   - cargo check                      --no-default-features
   - cargo check --target wasm32-wasi --no-default-features
-  - cargo build
+  - cargo rustc --target=wasm32-wasi --release --verbose
   - cargo test
 
 notifications:
