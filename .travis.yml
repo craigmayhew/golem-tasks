@@ -34,13 +34,13 @@ script:
   - cargo test
   - |
     cargo build
-    if ([ [ $COMPILER == "wasm32-wasi" ] ])
+    if [ $COMPILER == "wasm32-wasi" ]
     then
       rustup target add wasm32-wasi
       cargo check --target wasm32-wasi
       cargo check --target wasm32-wasi --no-default-features
       cargo rustc --target=wasm32-wasi --release --verbose
-    elif ([ [ $COMPILER == "wasm32-unknown-emscripten" ] ])
+    elif [ $COMPILER == "wasm32-unknown-emscripten" ]
     then
       cd $TRAVIS_HOME
       git clone https://github.com/emscripten-core/emsdk.git
