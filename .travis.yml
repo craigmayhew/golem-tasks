@@ -15,7 +15,7 @@ rust:
 
 jobs:
   include:
-    - stage: Build
+    - stage: Test
       env:
         - TASK=md5-recursion
       install:
