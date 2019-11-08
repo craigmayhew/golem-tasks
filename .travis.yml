@@ -1,0 +1,95 @@
+language: rust
+
+cache:
+  cargo: true
+
+env: RUST_BACKTRACE=1
+
+os: linux
+dist: bionic
+
+stages:
+  - name: Build
+
+jobs:
+  include:
+    - stage: Build
+    # Builds on nightly.
+      rust: nightly
+      install:
+        
+      before_script:
+        
+      before_cache:
+        # this following line is recommended by travis docs if one overrides before_cache
+        - rm -rf "$TRAVIS_HOME/.cargo/registry/src"
+        # for builds using rust nightly, we may aswell not attempt to cache target directory
+        # as every night, this cache is no longer useful
+        - rm -rfv $TRAVIS_BUILD_DIR/target/
+        - cargo clean -p md5-recursion
+      script:
+        - cargo check
+        - cargo check --target wasm32-wasi
+        - cargo check                      --no-default-features
+        - cargo check --target wasm32-wasi --no-default-features
+        - cargo check                      --no-default-features --features console_error_panic_hook
+        - cargo check --target wasm32-wasi --no-default-features --features console_error_panic_hook
+        - cargo check                      --no-default-features --features "console_error_panic_hook wee_alloc"
+        - cargo check --target wasm32-wasi --no-default-features --features "console_error_panic_hook wee_alloc"
+        - cargo build
+        - cargo test
+    # Builds on beta.
+    - 
+      rust: beta
+      install:
+        
+      before_script:
+        
+      before_cache:
+        # this following line is recommended by travis docs if one overrides before_cache
+        - rm -rf "$TRAVIS_HOME/.cargo/registry/src"
+        # for builds using rust nightly, we may aswell not attempt to cache target directory
+        # as every night, this cache is no longer useful
+        - rm -rfv $TRAVIS_BUILD_DIR/target/
+        - cargo clean -p md5-recursion
+      script:
+        - cargo check
+        - cargo check --target wasm32-wasi
+        - cargo check                      --no-default-features
+        - cargo check --target wasm32-wasi --no-default-features
+        - cargo check                      --no-default-features --features console_error_panic_hook
+        - cargo check --target wasm32-wasi --no-default-features --features console_error_panic_hook
+        - cargo check                      --no-default-features --features "console_error_panic_hook wee_alloc"
+        - cargo check --target wasm32-wasi --no-default-features --features "console_error_panic_hook wee_alloc"
+        - cargo build
+        - cargo test
+    # Builds on stable.
+    -
+      rust: stable
+      install:
+        
+      before_script:
+        
+      before_cache:
+        # this following line is recommended by travis docs if one overrides before_cache
+        - rm -rf "$TRAVIS_HOME/.cargo/registry/src"
+        # for builds using rust nightly, we may aswell not attempt to cache target directory
+        # as every night, this cache is no longer useful
+        - rm -rfv $TRAVIS_BUILD_DIR/target/
+        - cargo clean -p md5-recursion
+      script:
+        - cargo check
+        - cargo check --target wasm32-wasi
+        - cargo check                      --no-default-features
+        - cargo check --target wasm32-wasi --no-default-features
+        - cargo check                      --no-default-features --features console_error_panic_hook
+        - cargo check --target wasm32-wasi --no-default-features --features console_error_panic_hook
+        - cargo check                      --no-default-features --features "console_error_panic_hook wee_alloc"
+        - cargo check --target wasm32-wasi --no-default-features --features "console_error_panic_hook wee_alloc"
+        - cargo build
+        - cargo test
+
+notifications:
+  email:
+    on_failure: always
+    on_success: never
