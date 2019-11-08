@@ -7,10 +7,10 @@
   "timeout": "00:60:00",
   "resources": [],
   "options": {
-    "js_name": "prime.js",
-    "wasm_name": "prime.wasm",
-    "input_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\md5recursion\\in",
-    "output_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\md5recursion\\out",
+    "js_name": "md5recursion.js",
+    "wasm_name": "md5recursion.wasm",
+    "input_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\md5-recursion\\in",
+    "output_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\md5-recursion\\out",
     "subtasks": {
       "subtask1": {
         "exec_args": ["seed1"],
