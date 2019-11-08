@@ -11,61 +11,14 @@ dist: bionic
 stages:
   - name: Build
 
+rust:
+ - nightly
+ - beta
+ - stable
+
 jobs:
   include:
     - stage: Build
-      env:
-        - TASK=md5-recursion
-    # Builds on nightly.
-      rust: nightly
-      install:
-        
-      before_script:
-        
-      before_cache:
-        # this following line is recommended by travis docs if one overrides before_cache
-        - rm -rf "$TRAVIS_HOME/.cargo/registry/src"
-        # for builds using rust nightly, we may aswell not attempt to cache target directory
-        # as every night, this cache is no longer useful
-        - rm -rfv $TRAVIS_BUILD_DIR/gwasm/md5-recursion/target/
-        - cd $TRAVIS_BUILD_DIR/gwasm/md5-recursion/ && cargo clean -p md5-recursion
-      script:
-        - cd $TRAVIS_BUILD_DIR/gwasm/md5-recursion/
-        - rustup target add wasm32-wasi
-        - cargo check
-        - cargo check --target wasm32-wasi
-        - cargo check                      --no-default-features
-        - cargo check --target wasm32-wasi --no-default-features
-        - cargo build
-        - cargo test
-    # Builds on beta.
-    - 
-      rust: beta
-      env:
-        - TASK=md5-recursion
-      install:
-        
-      before_script:
-        
-      before_cache:
-        # this following line is recommended by travis docs if one overrides before_cache
-        - rm -rf "$TRAVIS_HOME/.cargo/registry/src"
-        # for builds using rust nightly, we may aswell not attempt to cache target directory
-        # as every night, this cache is no longer useful
-        - rm -rfv $TRAVIS_BUILD_DIR/gwasm/md5-recursion/target/
-        - cd $TRAVIS_BUILD_DIR/gwasm/md5-recursion/ && cargo clean -p md5-recursion
-      script:
-        - cd $TRAVIS_BUILD_DIR/gwasm/md5-recursion/
-        - rustup target add wasm32-wasi
-        - cargo check
-        - cargo check --target wasm32-wasi
-        - cargo check                      --no-default-features
-        - cargo check --target wasm32-wasi --no-default-features
-        - cargo build
-        - cargo test
-    # Builds on stable.
-    -
-      rust: stable
       env:
         - TASK=md5-recursion
       install:
