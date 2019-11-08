@@ -3,7 +3,10 @@ language: rust
 cache:
   cargo: true
 
-env: RUST_BACKTRACE=1
+env:
+ - RUST_BACKTRACE=1
+ - TASK=compression
+ - TASK=md5-recursion
 
 os: linux
 dist: bionic
@@ -16,8 +19,6 @@ rust:
 jobs:
   include:
     - stage: Test
-      env:
-        - TASK=md5-recursion
       install:
         
       before_script:
