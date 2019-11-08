@@ -1,0 +1,29 @@
+{
+  "compute_on": "cpu",
+  "type": "WASM",
+  "name": "prime check",
+  "bid": 1.0,
+  "subtask_timeout": "00:20:00",
+  "timeout": "00:60:00",
+  "resources": [],
+  "options": {
+    "js_name": "prime-check.js",
+    "wasm_name": "prime_check.wasm",
+    "input_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\prime-check\\in",
+    "output_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\prime-check\\out",
+    "subtasks": {
+      "subtask1": {
+        "exec_args": ["7"],
+        "output_file_paths": ["out.txt"]
+      },
+      "subtask2": {
+        "exec_args": ["901"],
+        "output_file_paths": ["out.txt"]
+      },
+      "subtask3": {
+        "exec_args": ["16384"],
+        "output_file_paths": ["out.txt"]
+      }
+    }
+  }
+}
