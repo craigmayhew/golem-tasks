@@ -1,17 +1,20 @@
-use std::io::{self, Write};
+use std::io::{self};
 
-extern crate lzma;
+extern crate xz2;
 
-use lzma::LzmaWriter;
+use xz2::read::{XzEncoder, XzDecoder};
 use std::io::prelude::*;
-use std::fs::File;
 
 fn main() -> io::Result<()> {
-    let f = File::create("out.xz").unwrap();
-	let mut f = LzmaWriter::new_compressor(f, 6).unwrap();
+    // Round trip some bytes from a byte source, into a compressor, into a
+	// decompressor, and finally into a vector.
+	let data = "Hello, World!".as_bytes();
+	let compressor = XzEncoder::new(data, 9);
+	let mut decompressor = XzDecoder::new(compressor);
 
-	write!(f, "It's a small world!").unwrap();
-	f.finish().unwrap();
+	let mut contents = String::new();
+	decompressor.read_to_string(&mut contents).unwrap();
+	assert_eq!(contents, "Hello, World!");
     
     Ok(())
 }
