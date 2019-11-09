@@ -14,7 +14,7 @@
     "subtasks": {
       "subtask1": {
         "exec_args": ["foo.txt"],
-        "output_file_paths": ["out.7z"]
+        "output_file_paths": ["foo.txt.7z"]
       }
     }
   }
