@@ -1,17 +1,24 @@
 use std::io::{self};
+use std::fs;
 
 extern crate lzma_rs;
 
-use lzma_rs::{xz_compress,xz_decompress};
+use lzma_rs::{lzma_compress};
 use std::io::prelude::*;
 
 fn main() -> io::Result<()> {
-	let filename = "foo.xz";
-	let mut f = std::io::BufReader::new(std::fs::File::open(filename).unwrap());
-	// "decomp" can be anything that implements "std::io::Write"
-	let mut decomp: Vec<u8> = Vec::new();
-	xz_decompress(&mut f, &mut decomp).unwrap();
-	// Decompressed content is now in "decomp"
+	let args = env::args().collect::<Vec<String>>();
+	let filename = args.get(1).map_or("no value found".to_owned(), |x| x.clone());
+	
+	let mut file = std::io::BufReader::new(std::fs::File::open(filename).unwrap());
+
+	// "comp" can be anything that implements "std::io::Write"
+	let mut compressed: Vec<u8> = Vec::new();
+	lzma_compress(&mut file, &mut compressed).unwrap();
+
+	//write compressed content to disk
+	let mut out_file = fs::File::create("out.7z")?;
+	out_file.write_all(&compressed)?;
 
     Ok(())
 }
