@@ -15,7 +15,7 @@ fn main() -> io::Result<()> {
 
 	let filename_7z = format!("{}.7z",&filename);
 	let mut compressed: Vec<u8> = Vec::new();
-	lzma_compress(&mut file, &mut compressed).unwrap();
+	lzma2_compress(&mut file, &mut compressed).unwrap();
 
 	//write compressed content to disk
 	let mut out_file = fs::File::create(filename_7z)?;
