@@ -3,8 +3,8 @@
   "type": "WASM",
   "name": "compression",
   "bid": 1.0,
-  "subtask_timeout": "00:03:00",
-  "timeout": "00:10:00",
+  "subtask_timeout": "00:10:00",
+  "timeout": "00:30:00",
   "resources": [],
   "options": {
     "js_name": "compression.js",
@@ -15,6 +15,10 @@
       "subtask1": {
         "exec_args": ["foo.txt"],
         "output_file_paths": ["foo.txt.7z"]
+      },
+      "subtask2": {
+        "exec_args": ["linuxmint-19.2-xfce-64bit.iso"],
+        "output_file_paths": ["linuxmint-19.2-xfce-64bit.iso.7z"]
       }
     }
   }
