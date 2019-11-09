@@ -31,3 +31,15 @@ fn main() -> io::Result<()> {
 
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn is_prime_check_test() {
+        assert_eq!(is_prime_check("598421674037041".to_string()), "598421674037041 is prime!");
+        assert_eq!(is_prime_check("901".to_string()), "901 is not prime :(");
+        assert_eq!(is_prime_check("16384".to_string()), "16384 is not prime :(");
+    }
+}
