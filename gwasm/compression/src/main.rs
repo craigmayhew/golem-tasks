@@ -4,7 +4,7 @@ use std::fs;
 
 extern crate lzma_rs;
 
-use lzma_rs::{lzma_compress};
+use lzma_rs::{lzma2_compress};
 use std::io::prelude::*;
 
 fn main() -> io::Result<()> {
