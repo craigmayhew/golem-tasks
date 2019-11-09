@@ -3,7 +3,9 @@
 This briefly shows you how to install golem, rust, compile golem tasks and deploy to mainnet.
 
 Tasks:
- - [md5 recursion](gwasm/md5-recursion/README.md)
+ - [LZMA Compression](gwasm/compression/README.md)
+ - [MD5 Recursion](gwasm/md5-recursion/README.md)
+ - [Primality Checker](gwasm/prime-check/README.md)
 
 ## Setup / install
 
