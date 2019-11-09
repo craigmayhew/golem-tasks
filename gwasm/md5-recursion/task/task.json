@@ -13,23 +13,23 @@
     "output_dir": "C:\\Users\\user\\Documents\\GitHub\\golem-tasks\\gwasm\\md5-recursion\\out",
     "subtasks": {
       "subtask1": {
-        "exec_args": ["seed1"],
+        "exec_args": ["seed1a"],
         "output_file_paths": ["out.txt"]
       },
       "subtask2": {
-        "exec_args": ["seed2"],
+        "exec_args": ["seed2a"],
         "output_file_paths": ["out.txt"]
       },
       "subtask3": {
-        "exec_args": ["seed3"],
+        "exec_args": ["seed3a"],
         "output_file_paths": ["out.txt"]
       },
       "subtask4": {
-        "exec_args": ["seed4"],
+        "exec_args": ["seed4a"],
         "output_file_paths": ["out.txt"]
       },
       "subtask5": {
-        "exec_args": ["seed5"],
+        "exec_args": ["seed5a"],
         "output_file_paths": ["out.txt"]
       }
     }
