@@ -34,3 +34,14 @@ fn main() -> io::Result<()> {
 
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn get_first_arg_test() {
+		//note test command is `cargo test test`
+		assert_eq!(get_first_arg(), "test".to_owned());
+    }
+}
