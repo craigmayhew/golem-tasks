@@ -14,9 +14,14 @@ fn write_file_to_disk(filename: String , data: Vec<u8>) -> io::Result<()> {
 	Ok(())
 }
 
-fn main() -> io::Result<()> {
+fn get_first_arg() -> String {
 	let args = env::args().collect::<Vec<String>>();
-	let filename: String = args.get(1).map_or("no value found".to_owned(), |x| x.clone());
+	let first_arg: String = args.get(1).map_or("no value found".to_owned(), |x| x.clone());
+	first_arg
+}
+
+fn main() -> io::Result<()> {
+	let filename: String = get_first_arg();
 	
 	let mut file = std::io::BufReader::new(std::fs::File::open(&filename).unwrap());
 
