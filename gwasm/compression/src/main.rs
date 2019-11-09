@@ -4,7 +4,7 @@ use std::fs;
 
 extern crate lzma_rs;
 
-use lzma_rs::{lzma2_compress};
+use lzma_rs::{lzma_compress};
 use std::io::prelude::*;
 
 fn write_file_to_disk(filename: String , data: Vec<u8>) -> io::Result<()> {
@@ -21,7 +21,7 @@ fn main() -> io::Result<()> {
 	let mut file = std::io::BufReader::new(std::fs::File::open(&filename).unwrap());
 
 	let mut compressed: Vec<u8> = Vec::new();
-	lzma2_compress(&mut file, &mut compressed).unwrap();
+	lzma_compress(&mut file, &mut compressed).unwrap();
 
 	//write compressed content to disk
 	let filename_7z:String = format!("{}.7z",&filename);
