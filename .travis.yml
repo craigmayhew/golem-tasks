@@ -4,9 +4,9 @@ cache:
   cargo: true
 
 env:
- - TASK=compression COMPILER=cargo-wasi RUST_BACKTRACE=1
- - TASK=compression COMPILER=wasm32-unknown-emscripten RUST_BACKTRACE=1
- - TASK=compression COMPILER=wasm32-wasi RUST_BACKTRACE=1
+ - TASK=compression COMPILER=cargo-wasi RUST_BACKTRACE=1 CARGO_TEST_ARGS=" -- test"
+ - TASK=compression COMPILER=wasm32-unknown-emscripten RUST_BACKTRACE=1 CARGO_TEST_ARGS=" -- test"
+ - TASK=compression COMPILER=wasm32-wasi RUST_BACKTRACE=1 CARGO_TEST_ARGS=" -- test"
  - TASK=md5-recursion COMPILER=cargo-wasi RUST_BACKTRACE=1
  - TASK=md5-recursion COMPILER=wasm32-unknown-emscripten RUST_BACKTRACE=1
  - TASK=md5-recursion COMPILER=wasm32-wasi RUST_BACKTRACE=1
@@ -37,7 +37,7 @@ script:
   - cd $TRAVIS_BUILD_DIR/gwasm/$TASK/
   - cargo check
   - cargo check --no-default-features
-  - cargo test
+  - cargo test $CARGO_TEST_ARGS
   - |
     cargo build
     if [ $COMPILER == "wasm32-wasi" ]
