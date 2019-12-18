@@ -19,7 +19,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "compression"
 version = "0.1.0"
 dependencies = [
- "lzma-rs 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "lzma-rs 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -40,7 +40,7 @@ dependencies = [
 
 [[package]]
 name = "lzma-rs"
-version = "0.1.1"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "byteorder 1.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -54,4 +54,4 @@ dependencies = [
 "checksum cfg-if 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)" = "4785bdd1c96b2a846b2bd7cc02e86b6b3dbf14e7e53446c4f54c92a361040822"
 "checksum crc 1.8.1 (registry+https://github.com/rust-lang/crates.io-index)" = "d663548de7f5cca343f1e0a48d14dcfb0e9eb4e079ec58883b7251539fa10aeb"
 "checksum log 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)" = "14b6052be84e6b71ab17edffc2eeabf5c2c3ae1fdb464aae35ac50c67a44e1f7"
-"checksum lzma-rs 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "9550ba35a4d6bb6be7f273bce93af3a3141c517bf7d7298763a7149e1bdb9af5"
+"checksum lzma-rs 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "ad0606857a51b9088eb75b52d8431b7b7c8656849cc6cb96dde9f3d18a1a4b58"
