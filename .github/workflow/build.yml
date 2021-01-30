@@ -1,0 +1,63 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      RUST_BACKTRACE: 1
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [cargo-wasi, wasm32-unknown-emscripten, wasm32-wasi]
+        toolchain: [stable, beta, nightly]
+        task: [compression, md5-recursion, prime-check]
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build ${{ matrix.task }} using ${{ matrix.toolchain }} ${{ matrix.compiler }}
+        run: |
+          rustup toolchain install ${{ matrix.config.toolchain }}
+          rustup default ${{ matrix.config.toolchain }}
+          cd gwasm/${{ matrix.task }}/
+          cargo check
+          cargo check --no-default-features
+          if [ ${{ matrix.task }} == "compression" ]
+          then
+            cargo test -- test
+          elif
+            cargo test
+          fi
+          cargo build
+          if [ ${{ matrix.compiler }} == "wasm32-wasi" ]
+          then
+            rustup target add wasm32-wasi
+            cargo check --target wasm32-wasi
+            cargo check --target wasm32-wasi --no-default-features
+            cargo rustc --target=wasm32-wasi --release --verbose
+          elif [ ${{ matrix.compiler }} == "cargo-wasi" ]
+          then
+            cargo install cargo-wasi
+            cargo wasi --version
+            cargo wasi build
+          elif [ ${{ matrix.compiler }} == "wasm32-unknown-emscripten" ]
+          then
+            cd ../
+            git clone https://github.com/emscripten-core/emsdk.git
+            cd emsdk
+            ./emsdk install latest
+            ./emsdk activate latest
+            source ./emsdk_env.sh
+            rustup target add wasm32-unknown-emscripten
+            cd gwasm/${{ matrix.task }}/
+            cargo rustc --target=wasm32-unknown-emscripten --release --verbose -- -C link-args="-s BINARYEN_ASYNC_COMPILATION=0" --verbose
+          fi
