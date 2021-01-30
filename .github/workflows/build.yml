@@ -58,6 +58,6 @@ jobs:
             ./emsdk activate latest
             source ./emsdk_env.sh
             rustup target add wasm32-unknown-emscripten
-            cd gwasm/${{ matrix.task }}/
+            cd ../golem-tasks/gwasm/${{ matrix.task }}/
             cargo rustc --target=wasm32-unknown-emscripten --release --verbose -- -C link-args="-s BINARYEN_ASYNC_COMPILATION=0" --verbose
           fi
