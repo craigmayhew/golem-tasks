@@ -35,6 +35,7 @@ jobs:
           then
             cargo test -- test
           elif
+          then
             cargo test
           fi
           cargo build
