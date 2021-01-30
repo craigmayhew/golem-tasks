@@ -34,8 +34,7 @@ jobs:
           if [ ${{ matrix.task }} == "compression" ]
           then
             cargo test -- test
-          elif
-          then
+          else
             cargo test
           fi
           cargo build
