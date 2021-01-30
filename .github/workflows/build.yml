@@ -51,17 +51,13 @@ jobs:
             cargo wasi build
           elif [ ${{ matrix.compiler }} == "wasm32-unknown-emscripten" ]
           then
-            pwd
-            cd ../
-            pwd
+            cd /home/runner/work/golem-tasks
             git clone https://github.com/emscripten-core/emsdk.git
             cd emsdk
-            pwd
             ./emsdk install latest
             ./emsdk activate latest
             source ./emsdk_env.sh
             rustup target add wasm32-unknown-emscripten
-            pwd
-            cd ../golem-tasks/gwasm/${{ matrix.task }}/
+            cd /home/runner/work/golem-tasks/golem-tasks/gwasm/${{ matrix.task }}/
             cargo rustc --target=wasm32-unknown-emscripten --release --verbose -- -C link-args="-s BINARYEN_ASYNC_COMPILATION=0" --verbose
           fi
