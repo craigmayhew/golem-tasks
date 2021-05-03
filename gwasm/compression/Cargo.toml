@@ -5,4 +5,4 @@ authors = ["Craig Mayhew"]
 edition = "2018"
 
 [dependencies]
-lzma-rs  = "0.1"
+lzma-rs  = "0.2"
